@@ -4,7 +4,10 @@ import Head from 'next/head'
 import React, { useRef, useEffect } from 'react'
 import Image from 'next/image'
 import profilepic from "../../public/images/profile/developer-pic-2.jpg"
-import { motion,useInView, useMotionValue, useSpring } from 'framer-motion'
+import {useInView, useMotionValue, useSpring } from 'framer-motion'
+import Skills from '@/components/Skills'
+import Experience from '@/components/Experience'
+import Education from '@/components/Education'
 
 
 const AnimatedNumbers = ({value}) => {
@@ -41,12 +44,12 @@ const about = () => {
 
       </Head>
 
-      <main className='flex w-full flex-col items-center justify-center'>
+      <main className='flex w-full flex-col items-center justify-center dark:text-light'>
         <Layout className='pt-16'>
           <AnimatedText text="Passion Fuels Purpose!"  className='mb-16'/>
           <div className='grid w-full grid-cols-8 gap-16'>
             <div className='col-span-3 flex flex-col items-start justify-start'>
-              <h2 className='mb-4 text-lg font-bold uppercase textdark/75 '>Biography</h2>
+              <h2 className='dark:text-light/75 mb-4 text-lg font-bold uppercase textdark/75 '>Biography</h2>
             
 
             <p className='font-medium'>
@@ -62,8 +65,8 @@ const about = () => {
             </p>
             </div>
 
-            <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-6'>
-              <div className='absolute top-1 -right-3 -z-10 w-[102%] h-[102%] rounded-[2rem] bg-dark' />
+            <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-6 dark:bg-dark dark:border-light'>
+              <div className='absolute top-0 -right-3 -z-10 w-[103%] h-[103%] rounded-3xl bg-dark dark:bg-light' />
               <Image src={profilepic} alt='harshith-picture' className='w-full h-auto rounded-2xl'/>
             </div>
 
@@ -73,27 +76,27 @@ const about = () => {
                   <AnimatedNumbers value={50}/>+
                 </span>
 
-                <h2 className='text-lg font-medium captalize text-dark/75 text-end'>
+                <h2 className='text-lg font-medium captalize text-dark/75 text-end dark:text-light/75'>
                   satisfied clients
                 </h2>
               </div>
 
               <div className='flex flex-col items-end justify-center'>
                 <span className='inline-block text-7xl font-bold '>
-                  40+
+                  <AnimatedNumbers value={40}/>+
                 </span>
 
-                <h2 className='text-lg font-medium captalize text-dark/75 text-end'>
-                  projects completed
+                <h2 className='text-lg font-medium captalize text-dark/75 text-end dark:text-light/75'>
+                  projects completeed
                 </h2>
               </div>
 
               <div className='flex flex-col items-end justify-center'>
                 <span className='inline-block text-7xl font-bold '>
-                  4+
+                  <AnimatedNumbers value={4}/>+
                 </span>
 
-                <h2 className='text-lg font-medium captalize text-dark/75 text-end'>
+                <h2 className='text-lg font-medium captalize text-dark/75 text-end  dark:text-light/75'>
                   years of experience
                 </h2>
               </div>
@@ -101,7 +104,9 @@ const about = () => {
             
           </div>
           
-
+          <Skills />
+          <Experience />
+          <Education />
         </Layout>
       </main>
     </>

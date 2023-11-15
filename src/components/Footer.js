@@ -1,11 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
 import Layout from './Layout'
-import { GithubIcon, LinkedInIcon, Mail, GitSq, LinkSq, MailSq, NewMail, InboxMail, LastMail } from './Icons'
+import {DotCon, GitSq, LinkSq, NewMail, } from './Icons'
+import {motion} from 'framer-motion'
 
 const Footer = () => {
   return (
-    <footer className='w-full border-t-2 border-solid border-dark font-medium text-lg'>
+    <footer className='w-full border-t-2 border-solid border-dark font-medium text-lg dark:text-light dark:border-light '>
       <Layout className='py-8 flex items-center justify-between left-0'>
         
         <div>
@@ -17,18 +18,18 @@ const Footer = () => {
         </div>
         
         <div >
-          <nav className='flex flex-column gap-5'>
+          <nav className='flex flex-wrap gap-5 mb-50'>
             
             
-            <a href="mailto:harshithkvanam@gmail.com" alt="Email" target="_blank" >
-              <NewMail />
-            </a>
+            <motion.a href="mailto:harshithkvanam@gmail.com" alt="Email" target="_blank" whileHover={{y:-5}}>
+              <NewMail className="dark:fill-light" style={{z:1}}/>
+            </motion.a>
             
             <a href="https://github.com/hkv232"  alt="GitHub" target="_blank">
-              <GitSq />
+              <GitSq className="dark:fill-light"/>
             </a>
             <a href="https://www.linkedin.com/in/harshith-vanam/"  alt="LinkedIn" target="_blank">
-              <LinkSq />
+              <LinkSq className="dark:fill-light" />
             </a>
           </nav>
 
