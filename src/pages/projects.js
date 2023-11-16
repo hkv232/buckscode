@@ -6,24 +6,34 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { GitSq } from '@/components/Icons'
 import project1 from "../../public/images/projects/crypto-screener-cover-image.jpg"
+import {motion} from 'framer-motion'
+import TransitionEffect from '@/components/TransitionEffect'
 
 
-
+const FramerImage = motion(Image);
 
 
 
 const FeaturedProject = ({type, title, summary, img, link, github}) => {
     return (
-        <article className='relative flex rounded-br-2xl rounded-2xl border border-solid border-dark bg-light shadow-2xl items-center p-10 dark:bg-dark dark:border-light'>
+        <article className='relative flex rounded-br-2xl rounded-2xl border border-solid border-dark bg-light shadow-2xl items-center p-10 dark:bg-dark dark:border-light
+        
+        mdlg:flex-col
 
-        <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[104%] rounded-3xl rounded-br-3xl bg-dark dark:bg-light'  />
+        mdlg:p-8
+        
+        '>
 
-            <Link href={link} target="_blank" className='w-1/2 cursor-pointer overflow-hidden rounded-xl'>
-                <Image src={img} alt={title} className='w-full h-auto' />
-                
+        <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[104%] rounded-3xl rounded-br-3xl bg-dark dark:bg-light mdlg:h-[102%]'  />
+
+            <div className='w-1/2 mdlg:w-full'>
+            <Link href={link} target="_blank" className='cursor-pointer overflow-hidden rounded-xl '>
+                {/* <Image src={img} alt={title} className='w-full h-auto' /> */}
+                <FramerImage src={img} alt={title} className='rounded-2xl w-full h-auto ' whileHover={{scale:1.03}} transition={{duration:0.2}} priority sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw'/>
             </Link>
+            </div>
 
-            <div className='w-1/2 flex flex-col items-start justify-between pl-6 '>
+            <div className='w-1/2 flex flex-col items-start justify-between pl-12 mdlg:pl-0 mdlg:w-full mdlg:pt-8 '>
                 <span className='text-primary font-medium text-xl'>
                     {type}
                 </span>
@@ -49,14 +59,19 @@ const FeaturedProject = ({type, title, summary, img, link, github}) => {
 
 const MajorProject = ({title, info, img, link, github}) => {
     return (
-        <article className='w-full flex flex-col justify-center rounded-2xl border border-solid border-dark bg-light shadow-2xl items-center p-6 relative dark:bg-dark dark:border-light'>
+        <article className='w-full flex flex-col justify-center rounded-2xl border border-solid border-dark bg-light shadow-2xl items-center p-6 relative dark:bg-dark dark:border-light
+
+        '>
 
         <div className='absolute top-0 -right-3 -z-10 w-[102.5%] h-[103%] rounded-3xl rounded-br-3xl bg-dark dark:bg-light dark:border-light' />
 
+            <div>
+
             <Link href={link} target="_blank" className='w-full cursor-pointer overflow-hidden rounded-lg'>
-                <Image src={img} alt={title} className='w-full h-auto' />
+            <FramerImage src={img} alt={title} className='rounded-2xl w-full h-auto' whileHover={{scale:1.03}} transition={{duration:0.2}} sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw'/>
                 
             </Link>
+            </div>
 
             <div className='w-full flex flex-col items-start justify-between mt-4'>
                 
@@ -86,10 +101,11 @@ const MiniProject = ({title, info, img, link, github}) => {
     return (
         <article className='w-full flex flex-col justify-center rounded-2xl border border-solid border-dark bg-light shadow-2xl items-center p-6 relative dark:bg-dark dark:border-light '>
 
+
         <div className='absolute top-0 -right-3 -z-10 w-[104%] h-[103%] rounded-3xl rounded-br-3xl bg-dark dark:bg-light dark:border-light' />            
 
             <Link href={link} target="_blank" className='w-full cursor-pointer overflow-hidden rounded-lg'>
-                <Image src={img} alt={title} className='w-full h-auto' />
+                <FramerImage src={img} alt={title} className='w-full h-auto' whileHover={{scale:1.03}} transition={{duration:0.2}} sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw'/>
                 
             </Link>
 
@@ -127,14 +143,16 @@ const projects = () => {
 
         </Head>
 
-        <main className='w-full mb-16 flex flex-col items-center justify-center'>
+        <TransitionEffect />
+
+        <main className='w-full mb-16 flex flex-col items-center justify-center z-0'>
             <Layout className='pt-16'>
-                <AnimatedText className='mb-16' text="Imagination Trumps Knowledge!"/>
+                <AnimatedText className='mb-16 text-7xl lg:text-6xl md:text-5xl' text="Imagination Trumps Knowledge!"/>
 
 
-                <div className='grid grid-cols-12 gap-24'>
-                    <div className='col-span-12 mb-40'>
-                        <FeaturedProject 
+                <div className='grid grid-cols-12 gap-24 xl:gap-x-16 lg:gap-x-8 '>
+                    <div className='col-span-12 mb-32'>
+                        <FeaturedProject
                         
                         
                         title = "Crypto Screener Application"
@@ -148,8 +166,12 @@ const projects = () => {
 
                         
                         />
+                        <span className={`bg-dark/75 dark:bg-light/75 block transition-all duration-300 ease-out h-[1px] w-full rounded-sm translate-y-32 border dark:border-light/75 border-dark/75 border-solid`}></span>
                     </div>
-                    <div className='col-span-6'>
+
+                    
+
+                    <div className='col-span-6 md:col-span-12'>
                     <MajorProject 
                         
                         
@@ -165,7 +187,7 @@ const projects = () => {
                         
                         />
                     </div>
-                    <div className='col-span-6'>
+                    <div className='col-span-6 md:col-span-12'>
                         <MajorProject 
                             
                             
@@ -181,7 +203,7 @@ const projects = () => {
                             
                             />
                     </div>
-                    <div className='col-span-4'>
+                    <div className='col-span-6 md:col-span-12'>
                     <MiniProject 
                         
                         
@@ -197,7 +219,7 @@ const projects = () => {
                         
                         />
                     </div>
-                    <div className='col-span-4'>
+                    <div className='col-span-6 md:col-span-12'>
                     <MiniProject 
                         
                         
@@ -213,7 +235,7 @@ const projects = () => {
                         
                         />
                     </div>
-                    <div className='col-span-4'>
+                    <div className='col-span-12'>
                     <MiniProject 
                         
                         

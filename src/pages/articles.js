@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '@/components/Layout'
 import Head from 'next/head'
 import AnimatedText from '@/components/AnimatedText'
+import TransitionEffect from '@/components/TransitionEffect'
 
 const articles = () => {
   return (
@@ -13,6 +14,8 @@ const articles = () => {
             <meta name='description' content='any description' />
 
         </Head>
+
+        <TransitionEffect />
 
         <main>
             <Layout className='pt-16'>

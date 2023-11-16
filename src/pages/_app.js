@@ -1,8 +1,10 @@
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import '@/styles/globals.css'
+import { AnimatePresence } from 'framer-motion'
 import {Rubik} from "next/font/google"
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 const rubik = Rubik({
   subsets: ['latin'],
@@ -10,6 +12,9 @@ const rubik = Rubik({
 })
 
 export default function App({ Component, pageProps }) {
+
+  const router = useRouter();
+
   return (
     <>
 
@@ -21,7 +26,10 @@ export default function App({ Component, pageProps }) {
 
     <main className={`${rubik.variable} dark:bg-dark font-mont bg-light w-full min-h-screen`}>
       <Navbar />
-      <Component {...pageProps} />
+      <AnimatePresence mode='wait'>
+        <Component key={router.asPath} {...pageProps} />
+      </AnimatePresence>
+      
       <Footer />
 
 
