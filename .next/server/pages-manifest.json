@@ -2,8 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/blanko": "pages/blanko.js",
   "/articles": "pages/articles.js",
+  "/portfolio/one": "pages/portfolio/one.js",
   "/projects": "pages/projects.js",
-  "/about": "pages/about.js"
+  "/portfolio/three": "pages/portfolio/three.js"
 }

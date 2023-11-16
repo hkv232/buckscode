@@ -27,7 +27,7 @@ const FeaturedProject = ({type, title, summary, img, link, github}) => {
         <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[104%] rounded-3xl rounded-br-3xl bg-dark dark:bg-light mdlg:h-[102%]'  />
 
             <div className='w-1/2 mdlg:w-full'>
-            <Link href={link} target="_blank" className='cursor-pointer overflow-hidden rounded-xl '>
+            <Link href={link} target="_self" className='cursor-pointer overflow-hidden rounded-xl '>
                 {/* <Image src={img} alt={title} className='w-full h-auto' /> */}
                 <FramerImage src={img} alt={title} className='rounded-2xl w-full h-auto ' whileHover={{scale:1.03}} transition={{duration:0.2}} priority sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw'/>
             </Link>
@@ -37,14 +37,14 @@ const FeaturedProject = ({type, title, summary, img, link, github}) => {
                 <span className='text-primary font-medium text-xl'>
                     {type}
                 </span>
-                <Link href={link} target="_blank" className='hover:underline underline-offset-2'>
+                <Link href={link} target="_self" className='hover:underline underline-offset-2'>
                     <h2 className='my-2 w-full text-left text-4xl font-bold dark:text-light'>{title}</h2>
                 
                 </Link>
                 <p className='dark:text-light my-2 font-medium text-dark'>{summary}</p>
 
                 <div className='mt-2 flex items-center'>
-                    <Link href={link} target='_blank' className='-mt-2 rounded-lg bg-dark text-light p-2 px-10 text-md border border-solid border-transparent font-semibold hover:bg-light hover:text-dark hover:border-dark
+                    <Link href={link} target='_self' className='-mt-2 rounded-lg bg-dark text-light p-2 px-10 text-md border border-solid border-transparent font-semibold hover:bg-light hover:text-dark hover:border-dark
                     
                     dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:text-light hover:dark:border-light
                     '> View Project </Link>
@@ -67,7 +67,7 @@ const MajorProject = ({title, info, img, link, github}) => {
 
             <div>
 
-            <Link href={link} target="_blank" className='w-full cursor-pointer overflow-hidden rounded-lg'>
+            <Link href={link} target="_self" className='w-full cursor-pointer overflow-hidden rounded-lg'>
             <FramerImage src={img} alt={title} className='rounded-2xl w-full h-auto' whileHover={{scale:1.03}} transition={{duration:0.2}} sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw'/>
                 
             </Link>
@@ -75,7 +75,7 @@ const MajorProject = ({title, info, img, link, github}) => {
 
             <div className='w-full flex flex-col items-start justify-between mt-4'>
                 
-                <Link href={link} target="_blank" className='hover:underline underline-offset-2'>
+                <Link href={link} target="_self" className='hover:underline underline-offset-2'>
                     <h2 className='dark:text-light my-2 w-full text-left text-2xl font-bold '>{title}</h2>
                 
                 </Link>
@@ -86,7 +86,7 @@ const MajorProject = ({title, info, img, link, github}) => {
                 </span>
 
                 <div className='mt-2 flex items-center'>
-                    <Link href={link} target='_blank' className='-mt-2 rounded-lg bg-dark text-light p-2 px-6 text-md border border-solid border-transparent font-semibold hover:bg-light hover:text-dark hover:border-dark
+                    <Link href={link} target='_self' className='-mt-2 rounded-lg bg-dark text-light p-2 px-6 text-md border border-solid border-transparent font-semibold hover:bg-light hover:text-dark hover:border-dark
                     
                     dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:text-light hover:dark:border-light'> View Project </Link>
                 </div>
@@ -104,14 +104,14 @@ const MiniProject = ({title, info, img, link, github}) => {
 
         <div className='absolute top-0 -right-3 -z-10 w-[104%] h-[103%] rounded-3xl rounded-br-3xl bg-dark dark:bg-light dark:border-light' />            
 
-            <Link href={link} target="_blank" className='w-full cursor-pointer overflow-hidden rounded-lg'>
+            <Link href={link} target="_self" className='w-full cursor-pointer overflow-hidden rounded-lg'>
                 <FramerImage src={img} alt={title} className='w-full h-auto' whileHover={{scale:1.03}} transition={{duration:0.2}} sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw'/>
                 
             </Link>
 
             <div className='w-full flex flex-col items-start justify-between mt-4'>
                 
-                <Link href={link} target="_blank" className='hover:underline underline-offset-2'>
+                <Link href={link} target="_self" className='hover:underline underline-offset-2'>
                     <h2 className='dark:text-light my-2 w-full text-left text-xl font-bold'>{title}</h2>
                 
                 </Link>
@@ -121,7 +121,7 @@ const MiniProject = ({title, info, img, link, github}) => {
                 </span>
 
                 <div className='mt-2 flex items-center'>
-                    <Link href={link} target='_blank' className='-mt-2 rounded-lg bg-dark text-light p-2 px-6 text-md border border-solid border-transparent font-semibold hover:bg-light hover:text-dark hover:border-dark
+                    <Link href={link} target='_self' className='-mt-2 rounded-lg bg-dark text-light p-2 px-6 text-md border border-solid border-transparent font-semibold hover:bg-light hover:text-dark hover:border-dark
                     
                     dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:text-light hover:dark:border-light'> View Project </Link>
                 </div>

@@ -27,10 +27,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/articles.js"
     ],
-    "/blanko": [
+    "/portfolio/one": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/blanko.js"
+      "static/chunks/pages/portfolio/one.js"
+    ],
+    "/portfolio/three": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/portfolio/three.js"
     ],
     "/projects": [
       "static/chunks/webpack.js",
